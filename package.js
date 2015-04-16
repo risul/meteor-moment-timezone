@@ -1,14 +1,14 @@
 Package.describe({
     name: 'risul:moment-timezone',
     summary: 'Timezone support for moment.js, packaged for Meteor',
-    version: '0.3.0',
+    version: '0.3.0_1',
     git: 'https://github.com/risul/meteor-moment-timezone'
 });
 
 Package.on_use(function (api, where) {
     where = where || ['client', 'server']
 
-    var momentPackageName = !!Package.onUse ? "momentjs:moment@2.9.0" : "moment"
+    var momentPackageName = !!Package.onUse ? "momentjs:moment@2.10.3" : "moment"
     api.use(momentPackageName, where);
     if (api.imply) {
         api.imply(momentPackageName, where);
