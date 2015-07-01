@@ -1,7 +1,7 @@
 Package.describe({
     name: 'risul:moment-timezone',
     summary: 'Timezone support for moment.js, packaged for Meteor',
-    version: '0.3.1_1',
+    version: '0.4.0',
     git: 'https://github.com/risul/meteor-moment-timezone'
 });
 
