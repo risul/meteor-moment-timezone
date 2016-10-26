@@ -1,21 +1,17 @@
 Package.describe({
     name: 'risul:moment-timezone',
     summary: 'Timezone support for moment.js, packaged for Meteor',
-    version: '0.5.0_5',
+    version: '0.5.7',
     git: 'https://github.com/risul/meteor-moment-timezone'
 });
 
-Package.on_use(function (api, where) {
-    var where = where || ['client', 'server'];
-    var momentPackageName = !!Package.onUse ? "momentjs:moment@2.11.2" : "moment"
-    
-    api.use(momentPackageName, where);
-    
-    if (api.imply) {
-        api.imply(momentPackageName, where);
-    }
-    
-    api.add_files('pre.js', where);
-    api.add_files('lib/moment-timezone-with-data.js', where);
-    api.add_files('post.js', where);
+Package.on_use(function (api) {
+    api.use('momentjs:moment@2.15.2');
+    api.imply('momentjs:moment');
+
+    api.addFiles([
+        'pre.js',
+        'lib/moment-timezone-with-data.js',
+        'post.js'
+    ], ['client', 'server']);
 });
