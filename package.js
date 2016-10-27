@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-    api.use('momentjs:moment@2.15.2');
+    api.use('momentjs:moment@2.15.1');
     api.imply('momentjs:moment');
 
     api.addFiles([
